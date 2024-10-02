@@ -38,3 +38,11 @@ print("Predicted Weights: ", predictions)
 # Step 11: (Optional) Check the model's accuracy
 score = model.score(X_test, y_test)
 print(f"Model Accuracy: {score * 100:.2f}%")
+import matplotlib.pyplot as plt
+
+plt.scatter(y_test, predictions)
+plt.xlabel("Actual Weights")
+plt.ylabel("Predicted Weights")
+plt.title("Linear Regression Curve")
+plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='red')  # Line of perfect prediction
+plt.show()
